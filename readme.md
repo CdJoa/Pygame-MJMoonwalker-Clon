@@ -1,6 +1,5 @@
-##  Parcial integrador P y L
-![pygame](Recursos\icono1.png)
-
+## Parcial integrador P y L
+![pygame](Recursos/icono1.png)
 
 
 ## Alumno
