@@ -20,7 +20,8 @@ from constantes import *
 class NivelUno(Nivel):
       
       def __init__(self,pantalla:py.Surface):
- 
+            self.lista_enemigos = lista_enemigos
+
             py.mixer.init()
             sonido_nivel = py.mixer.Sound("Recursos\Billie Jean.mp3")
             sonido_nivel.play()
@@ -73,6 +74,7 @@ class NivelUno(Nivel):
 
             lista_enemigos2 = [un_enemigo3]
             
+
             self.generar_enemigos(lista_enemigos)
 
 
@@ -86,6 +88,8 @@ class NivelUno(Nivel):
             super().__init__(pantalla, plataformas_lista, estrella_lista, lista_monedas, lista_enemigos,lista_enemigos2,botiquin_lista,vida_lista,lista_portal,lista_sonido,lista_llave,jefe_final, fondo)
 
       def generar_enemigos(self, lista_enemigos):
+            self.lista_enemigos.clear()
+
             cantidad = random.randint(2, 5)  # Puedes ajustar el rango según tus necesidades
 
             velocidades_unicas = (set(random.uniform(5, 10) for _ in range(cantidad)))

@@ -18,7 +18,8 @@ import json
 class NivelDos(Nivel):
       
       def __init__(self,pantalla:py.Surface):
-            
+            self.lista_enemigos = lista_enemigos
+
             py.mixer.stop()  
             sonido_nivel = py.mixer.Sound("Recursos\Beat It.mp3")
             sonido_nivel.play()
@@ -82,7 +83,7 @@ class NivelDos(Nivel):
             un_enemigo4= Enemigo2(diccionario_enemigoQuieto,W/20,H/6)
 
             lista_enemigos2 = [un_enemigo3,un_enemigo4]
-
+            
 
             flecha = Flecha(diccionario_flecha,0,W-W/20,H/2)
 
@@ -94,6 +95,8 @@ class NivelDos(Nivel):
 
       
       def generar_enemigos(self, lista_enemigos):
+            self.lista_enemigos.clear()
+
             cantidad = random.randint(2, 5)  # Puedes ajustar el rango según tus necesidades
 
             velocidades_unicas = (set(random.uniform(5, 10) for _ in range(cantidad)))

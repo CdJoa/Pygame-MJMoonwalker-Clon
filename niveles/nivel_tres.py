@@ -20,7 +20,8 @@ from constantes import *
 class NivelTres(Nivel):
       
       def __init__(self,pantalla:py.Surface):
-            
+            self.lista_enemigos = lista_enemigos
+
             py.mixer.stop()  
             sonido_nivel = py.mixer.Sound("Recursos\Smooth Criminal.mp3")
             sonido_nivel.play()
@@ -71,15 +72,3 @@ class NivelTres(Nivel):
 
             super().__init__(pantalla, plataformas_lista, estrella_lista, lista_monedas, lista_enemigos,lista_enemigos2,botiquin_lista,vida_lista,lista_portal,lista_sonido,lista_llave,jefe_final, fondo)
  
-      def generar_enemigos(self, lista_enemigos):
-            cantidad = random.randint(30, 35)  # Puedes ajustar el rango según tus necesidades
-
-            velocidades_unicas = (set(random.uniform(5, 20) for _ in range(cantidad)))
-
-            # Crear enemigos con las velocidades únicas
-            for velocidad in velocidades_unicas:
-
-                  nuevo_enemigo = Enemigo(diccionario_drHuevo, velocidad, W / 2, 0)
-                  lista_enemigos.append(nuevo_enemigo)
-
-
