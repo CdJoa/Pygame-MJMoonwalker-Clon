@@ -1,7 +1,7 @@
 import pygame as py
 import sys
 from pygame.locals import *
-from Configuraciones import *
+from assets.Configuraciones import *
 from os import system
 from niveles.nivel_uno import NivelUno
 from niveles.nivel_dos import NivelDos
