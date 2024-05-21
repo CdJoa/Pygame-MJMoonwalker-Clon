@@ -20,30 +20,29 @@ from constantes import *
 class NivelUno(Nivel):
       
       def __init__(self,pantalla:py.Surface):
-            self.lista_enemigos = lista_enemigos
 
             py.mixer.init()
-            sonido_nivel = py.mixer.Sound("Recursos\Billie Jean.mp3")
+            sonido_nivel = py.mixer.Sound(r"assets\Billie Jean.mp3")
             sonido_nivel.play()
 
             lista_sonido = [sonido_nivel]
 
 
-            pisob1 = Plataforma((W/10,  H/15), W-W/5, H-H/3,0,0,0, "Recursos\piso.png")  
-            pisoc = Plataforma((W/15, H/15),W/6, H/4.5,0,0,0, "Recursos\piso.png")  
-            pisoE = Plataforma((W-W/5, H/15),W/5, H/4,0,0,0, "Recursos\piso.png")  
+            pisob1 = Plataforma((W/10,  H/15), W-W/5, H-H/3,0,0,0, r"assets\piso.png")  
+            pisoc = Plataforma((W/15, H/15),W/6, H/4.5,0,0,0, r"assets\piso.png")  
+            pisoE = Plataforma((W-W/5, H/15),W/5, H/4,0,0,0, r"assets\piso.png")  
             
 
 
 
-            piso4 = Plataforma((W/10, H/15), 0, H/2 - H/8,0,0,0, "Recursos\piso.png")  
+            piso4 = Plataforma((W/10, H/15), 0, H/2 - H/8,0,0,0, r"assets\piso.png")  
             
 
 
-            lava = Plataforma((W, H/10), 0, H-H/8,0,0,1, "Recursos\lava.png")   # Cambia "Recursos/caño.png" al archivo correcto
-            piso3 = Plataforma((W/10, H/15), W/9, H-H/6,-1,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            lava = Plataforma((W, H/10), 0, H-H/8,0,0,1, r"assets\lava.png")   # Cambia "assets/caño.png" al archivo correcto
+            piso3 = Plataforma((W/10, H/15), W/9, H-H/6,-1,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
            
-            piso2 = Plataforma((W/10, H/15), W/2, H/2,1,0,0,"Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            piso2 = Plataforma((W/10, H/15), W/2, H/2,1,0,0,r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
 
 
 
@@ -67,7 +66,7 @@ class NivelUno(Nivel):
 
             lista_monedas = [moneda,moneda2,moneda3]
 
-            fondo = py.image.load(r"Recursos\fondo1.png").convert()
+            fondo = py.image.load(r"assets\fondo1.png").convert()
             fondo = py.transform.scale(fondo, (W,H))
             
             un_enemigo3 = Enemigo2(diccionario_enemigoQuieto,0,H/7)
@@ -88,7 +87,6 @@ class NivelUno(Nivel):
             super().__init__(pantalla, plataformas_lista, estrella_lista, lista_monedas, lista_enemigos,lista_enemigos2,botiquin_lista,vida_lista,lista_portal,lista_sonido,lista_llave,jefe_final, fondo)
 
       def generar_enemigos(self, lista_enemigos):
-            self.lista_enemigos.clear()
 
             cantidad = random.randint(2, 5)  # Puedes ajustar el rango según tus necesidades
 

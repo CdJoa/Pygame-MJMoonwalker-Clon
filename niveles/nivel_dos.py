@@ -21,7 +21,7 @@ class NivelDos(Nivel):
             self.lista_enemigos = lista_enemigos
 
             py.mixer.stop()  
-            sonido_nivel = py.mixer.Sound("Recursos\Beat It.mp3")
+            sonido_nivel = py.mixer.Sound("assets\Beat It.mp3")
             sonido_nivel.play()
             lista_sonido = [sonido_nivel]
 
@@ -37,20 +37,20 @@ class NivelDos(Nivel):
             moneda = Moneda(diccionario_moneda,0,W/4,H/4)
             lista_monedas = [moneda]
 
-            pared = Plataforma((W/15,H/2), W-W/4, H/3,0,0,0,"Recursos\paredVioleta.png")
-            Piso = Plataforma((W/8, H/15), 0, H-H/8,0,0,0,"Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
-            Pisob = Plataforma((W/8, H/15), W/3, H-H/8,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            pared = Plataforma((W/15,H/2), W-W/4, H/3,0,0,0,r"assets\paredVioleta.png")
+            Piso = Plataforma((W/8, H/15), 0, H-H/8,0,0,0,r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
+            Pisob = Plataforma((W/8, H/15), W/3, H-H/8,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
 
-            Pisoc = Plataforma((W/8, H/15), W/2, H-H/8,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            Pisoc = Plataforma((W/8, H/15), W/2, H-H/8,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
 
 
-            Piso2 = Plataforma((W/2, H/15), 0, H/2+H/8,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
-            Piso3 = Plataforma((W/8, H/15), W-W/2.5, H-H/4,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
-            Piso4 = Plataforma((W/8, H/15), 0, H/2,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
-            Piso5 = Plataforma((W/12, H/15), 0, H/3,1,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            Piso2 = Plataforma((W/2, H/15), 0, H/2+H/8,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
+            Piso3 = Plataforma((W/8, H/15), W-W/2.5, H-H/4,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
+            Piso4 = Plataforma((W/8, H/15), 0, H/2,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
+            Piso5 = Plataforma((W/12, H/15), 0, H/3,1,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
             
-            Piso6 = Plataforma((W/8, H/12),W/3, H/5,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
-            Piso7 = Plataforma((W/2, H/20), W/2, H/4,0,0,1, "Recursos\lava2.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            Piso6 = Plataforma((W/8, H/12),W/3, H/5,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
+            Piso7 = Plataforma((W/2, H/20), W/2, H/4,0,0,1, r"assets\lava2.png")   # Cambia "assets/caño.png" al archivo correcto
 
 
             llave1= Objetos(diccionario_llave,0,W-W/15,H/8)
@@ -75,7 +75,7 @@ class NivelDos(Nivel):
             vida_lista = [vida1]
     
 
-            fondo = py.image.load(r"Recursos\fondo2.png").convert()
+            fondo = py.image.load(r"assets\fondo2.png").convert()
             fondo = py.transform.scale(fondo, (W,H))
             
             un_enemigo3 = Enemigo2(diccionario_enemigoQuieto,W/3,H/2)

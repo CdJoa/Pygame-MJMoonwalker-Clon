@@ -23,19 +23,19 @@ class NivelTres(Nivel):
             self.lista_enemigos = lista_enemigos
 
             py.mixer.stop()  
-            sonido_nivel = py.mixer.Sound("Recursos\Smooth Criminal.mp3")
+            sonido_nivel = py.mixer.Sound(r"assets\Smooth Criminal.mp3")
             sonido_nivel.play()
 
             lista_sonido = [sonido_nivel]
 
-            pared = Plataforma((W/25,H), W-W/10, 0,0,0,0,"Recursos\paredVioleta.png")
+            pared = Plataforma((W/25,H), W-W/10, 0,0,0,0,r"assets\paredVioleta.png")
 
-            Piso = Plataforma((W, H/10), 0, H-H/8,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
-            Piso2 = Plataforma((W/2.5, H/15), W/4, H/2+H/15,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            Piso = Plataforma((W, H/10), 0, H-H/8,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
+            Piso2 = Plataforma((W/2.5, H/15), W/4, H/2+H/15,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
 
-            Pisob = Plataforma((W/15, H/25), W/12, H-H/3.5,0,0,0, "Recursos\piso.png")   # Cambia "Recursos/caño.png" al archivo correcto
+            Pisob = Plataforma((W/15, H/25), W/12, H-H/3.5,0,0,0, r"assets\piso.png")   # Cambia "assets/caño.png" al archivo correcto
 
-            Pisoc = Plataforma((W/15, H/25), W/2+W/4, H-H/3.5,0,0,0, "Recursos\piso.png")  
+            Pisoc = Plataforma((W/15, H/25), W/2+W/4, H-H/3.5,0,0,0, r"assets\piso.png")  
 
 
             plataformas_lista = [pared,Piso,Piso2,Pisob,Pisoc]
@@ -58,7 +58,7 @@ class NivelTres(Nivel):
             moneda = Moneda(diccionario_moneda,0,W/10,H-H/6)
             lista_monedas = [moneda]
 
-            fondo = py.image.load(r"Recursos\fondo3.png").convert()
+            fondo = py.image.load(r"assets\fondo3.png").convert()
             fondo = py.transform.scale(fondo, (W,H))
             lista_enemigos2=[]
             huevo = jefe(diccionario_drHuevo,W-W/6,H-H/6,4)

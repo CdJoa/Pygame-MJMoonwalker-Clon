@@ -3,7 +3,7 @@ from modo import *
 py.init()
 RELOJ = py.time.Clock()
 import time
-from Configuraciones import *
+from assets.Configuraciones import *
 from constantes import*
 from Clases.Class_Disparo import*
 import json
@@ -11,9 +11,9 @@ import sys
 import os
 
 from Clases.Class_Personaje import*
-from UI.GUI_form_opciones import *
+from interfaz.GUI_form_opciones import *
 
-from UI.GUI_form import*
+from interfaz.GUI_form import*
 
 class Nivel(Form):
     def __init__(self,pantalla,plataformas_lista,estrella_lista,lista_monedas,lista_enemigos,lista_enemigos2,botiquin_lista,vida_lista,lista_portal,lista_sonido,lista_llave,jefe_final,imagen_fondo):
@@ -50,6 +50,7 @@ class Nivel(Form):
 
 
     def update(self, lista_eventos):
+
         pygame.display.update()
 
         with open("datos_volumen.json", "r") as nivel2_file:
@@ -68,7 +69,7 @@ class Nivel(Form):
         
         if self.jugador.Tiempo == 350:
 
-            sonido_nivel2 = py.mixer.Sound("Recursos\contrarreloj.mp3")
+            sonido_nivel2 = py.mixer.Sound(r"assets\contrarreloj.mp3")
             sonido_nivel2.set_volume(0.25)  # Adjust the volume as needed (0.5 represents 50% volume)
 
             sonido_nivel2.play(0)
@@ -229,9 +230,6 @@ class Nivel(Form):
         self.jugador.update(self._slave, self.plataformas,self.estrella,self.monedas,self.enemigos,self.enemigos2,self.botiquin,self.vidaUp,self.portal,self.llave,self.jefe)
 
 
-
-
-
     def leer_inputs(self):
         teclas = py.key.get_pressed()
         if self.jugador.vidas != 0:
@@ -285,7 +283,7 @@ class Nivel(Form):
 
     
     def ui(self):
-        imagen = py.image.load(r"Recursos\ui0.png").convert()
+        imagen = py.image.load(r"assets\ui0.png").convert()
         imagen = py.transform.scale(imagen, (W // 10, H // 13))  # Assuming W and H are defined somewhere
         self._slave.blit(imagen, (0, H-H/9))
         font = py.font.Font(None, 45)  # You can adjust the font size as needed
